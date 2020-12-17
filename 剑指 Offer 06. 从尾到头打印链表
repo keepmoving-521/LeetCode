@@ -1,0 +1,67 @@
+"""
+输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
+
+示例 1：
+
+输入：head = [1,3,2]
+输出：[2,3,1]
+"""
+#  方法一：
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def reversePrint(self, head):
+        """
+        :type head: ListNode
+        :rtype: List[int]
+        """
+        return self.reversePrint(head.next) + [head.val] if head else []
+        
+ #  方法二（此方法时间复杂度和空间复杂度更优一点）
+ # Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def reversePrint(self, head):
+        """
+        :type head: ListNode
+        :rtype: List[int]
+        """
+        stock = []
+        while head:
+            stock.append(head.val)
+            head = head.next
+        return stock[::-1]
+  
+"""
+方法1：递归法 利用递归将头结点移动到末端，然后回溯，依次将节点的值放入到列表中，既可以实现链表中的值倒序输出。
+
+递归方式：
+
+    递归终止条件：当head=None时，说明链表已经到结尾了，返回空的列表。
+    递归递推条件：访问下一个节点head=head.next。
+    回溯方式：下一步递归返回结果list + [head.val]（不同的语言有不同的实现方式）。
+复杂度分析
+
+    时间复杂度O(N)：遍历链表N次
+    空间复杂度O(N)：系统递归需要使用O(N)这么大的栈空间
+
+方法2：辅助栈法
+
+对于题目中的单项链表来说，只能从前往后访问每个节点，题目要求倒序输出各个节点的值，很容易就可以联想到栈这种先进后出的数据结构了。
+如果使用Python的话，在遍历一个链表的时候，将值依次放入到一个list中，遍历结束后，翻转list输出即可。
+
+复杂度分析
+
+    时间复杂度O(N)：list添加数据N次
+
+    空间复杂度O(N)：list存储结果O(N)这么大的空间
+"""
+        
