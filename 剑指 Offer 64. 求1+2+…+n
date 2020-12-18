@@ -10,6 +10,7 @@
 输入: n = 9
 输出: 45
 """
+#方法一：
 class Solution(object):
     def __init__(self):
         self.res = 0
@@ -21,7 +22,16 @@ class Solution(object):
         n > 1 and self.sumNums(n - 1)
         self.res += n 
         return self.res
-        
+ 
+ #方法二（此方法执行效率跟高）：
+ class Solution(object):
+   
+    def sumNums(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        return n and n + self.sumNums(n - 1)
 """
 解题思路：
     本题在简单问题上做了许多限制，需要使用排除法一步步导向答案。
