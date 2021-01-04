@@ -1,0 +1,53 @@
+"""
+输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。
+假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
+
+ 
+例如，给出
+
+前序遍历 preorder = [3,9,20,15,7]
+中序遍历 inorder = [9,3,15,20,7]
+返回如下的二叉树：
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+
+"""
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def buildTree(self, preorder, inorder):
+        """
+        :type preorder: List[int]
+        :type inorder: List[int]
+        :rtype: TreeNode
+        """
+        if not preorder:
+            return None
+        node = TreeNode(preorder[0])
+        index = inorder.index(preorder[0])
+
+        left_pre = preorder[1:index+1]
+        left_in = inorder[:index]
+        right_pre = preorder[index+1:]
+        right_in = inorder[index+1:]
+        node.left = self.buildTree(left_pre, left_in)
+        node.right = self.buildTree(right_pre, right_in)
+        return node
+
+"""
+解题思路：
+    需要根据这两个序列划分,我们知道前序遍历的第一个节点为头结点,在这了头结点为[3],我们在中序遍历中找到[3]所在的位置,
+    可以看到位于中序遍历的第二个位置,那么我们可以确定[3]的左子树的节点包含[9],右子树节点包含[20,25,7],一直这样划分下去,直到数组为空,在返回节点.
+
+    时间复杂度O(n),空间复杂度O(n)
+
+"""
