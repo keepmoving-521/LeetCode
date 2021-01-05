@@ -1,0 +1,70 @@
+"""
+把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。
+输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。
+例如，数组 [3,4,5,1,2] 为 [1,2,3,4,5] 的一个旋转，该数组的最小值为1。  
+
+示例 1：
+
+输入：[3,4,5,1,2]
+输出：1
+示例 2：
+
+输入：[2,2,2,0,1]
+输出：0
+"""
+#  方法一：
+class Solution(object):
+    def minArray(self, numbers):
+        """
+        :type numbers: List[int]
+        :rtype: int
+        """
+        return min(numbers)
+        
+#  方法二：
+class Solution(object):
+    def minArray(self, numbers):
+        """
+        :type numbers: List[int]
+        :rtype: int
+        """
+        for i in range(len(numbers)-1):
+            if numbers[i] > numbers[i+1]:
+                return numbers[i+1]
+        return numbers[0]
+#  方法三：
+class Solution(object):
+    def minArray(self, numbers):
+        """
+        :type numbers: List[int]
+        :rtype: int
+        """
+        n, m = 0, len(numbers) -1
+        while n<m:
+            mid = (n+m)//2
+            if numbers[mid] > numbers[m]:
+                n = mid +1
+            elif numbers[mid] < numbers[m]:
+                m = mid 
+            else:
+                m -= 1
+        return numbers[n]
+
+"""
+解法一：暴力法
+返回数组的最小值。
+
+解法二：找规律
+小于前一个元素的元素是最小的元素，如果没有找到就是第一个元素。（该数组最开始的0个元素搬到数组的末尾）
+
+解法三：二分法
+过程：
+
+初始化左和右；
+如果左小于右则循环：
+中间等于左和右的平均索引：
+如果中间和右边的值一样：移动左；
+如果中间大于右：左等于中间的下一个；
+如果右大于中间：右等于中间的下一个。
+最后返回左对应的值。
+"""
