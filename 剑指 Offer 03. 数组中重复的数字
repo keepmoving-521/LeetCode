@@ -24,6 +24,7 @@ class Solution(object):
             else:
                 dict.add(i)
         return -1
+
 """
 方法：哈希表 / Set
     利用数据结构特点，容易想到使用哈希表（Set）记录数组的各个数字，当查找到重复数字则直接返回。
