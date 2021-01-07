@@ -11,7 +11,6 @@
 [2, 3, 1, 0, 2, 5, 3]
 输出：2 或 3 
 """
-
 class Solution(object):
     def findRepeatNumber(self, nums):
         """
@@ -39,5 +38,4 @@ class Solution(object):
 复杂度分析：
 时间复杂度 O(N) ： 遍历数组使用 O(N) ，HashSet 添加与查找元素皆为 O(1) 。
 空间复杂度 O(N) ： HashSet 占用 O(N) 大小的额外空间。
-
 """
