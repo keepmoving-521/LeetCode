@@ -24,7 +24,7 @@ class Solution(object):
 
 a = Solution()
 # b = a.isUnique('abcdd')
-b = a.isUnique('abcdef')
+b = a.isUnique('abcdefg')
 print(b)
 """
 解题思路
