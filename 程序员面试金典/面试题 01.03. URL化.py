@@ -36,3 +36,9 @@ class Solution(object):
                 URL.append(char)
         return ''.join(URL)
 
+
+a = Solution()
+# b = a.replaceSpaces("Mr John Smith    ", 13)
+# b = a.replaceSpaces("Mr John Smith    ", 14)
+b = a.replaceSpaces("               ", 5)
+print(b)
