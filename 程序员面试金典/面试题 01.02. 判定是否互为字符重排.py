@@ -35,7 +35,6 @@
 #         :rtype: bool
 #         """
 #         return sorted(s1) == sorted(s2)
-
 #  方法三：利用集合元素的不可重复性
 class Solution(object):
     def CheckPermutation(self, s1, s2):
