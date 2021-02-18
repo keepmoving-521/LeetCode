@@ -23,8 +23,8 @@ class Solution(object):
 
 
 a = Solution()
-# b = a.isUnique('abcddg')
-b = a.isUnique('abcdefg')
+# b = a.isUnique('abcddgh')
+b = a.isUnique('abcdefgh')
 print(b)
 """
 解题思路
