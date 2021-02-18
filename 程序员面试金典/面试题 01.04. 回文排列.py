@@ -11,14 +11,23 @@
 输出：true（排列有"tacocat"、"atcocta"，等等）
 """
 from collections import Counter
+
+
 class Solution(object):
     def canPermutePalindrome(self, s):
         """
         :type s: str
         :rtype: bool
         """
-        count = [i for i in Counter(s).values() if i%2==1]
+        count = [i for i in Counter(s).values() if i % 2 == 1]
         return len(count) < 2
+
+
+a = Solution()
+# b = a.canPermutePalindrome('abcdcba')
+b = a.canPermutePalindrome('abcdcab')
+# b = a.canPermutePalindrome('abcdcbx')
+print(b)
 
 """
 借助counter直接计数
