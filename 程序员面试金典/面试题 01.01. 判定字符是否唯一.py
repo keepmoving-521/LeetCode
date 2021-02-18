@@ -23,7 +23,7 @@ class Solution(object):
 
 
 a = Solution()
-# b = a.isUnique('abcdd')
+# b = a.isUnique('abcddg')
 b = a.isUnique('abcdefg')
 print(b)
 """
