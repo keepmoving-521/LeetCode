@@ -48,6 +48,7 @@ class Solution(object):
             head = head.next
         return data[-k]
 
+
 """
 方法一：
 解题思路

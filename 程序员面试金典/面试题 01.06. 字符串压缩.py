@@ -33,6 +33,7 @@ class Solution(object):
                 a = i
         c += a + str(b)
         return S if len(S) <= len(c) else  c
+
 """
 方法一：模拟
 思路

@@ -77,6 +77,7 @@ class AnimalShelf(object):
                 break
         return ret
 
+
 # Your AnimalShelf object will be instantiated and called as such:
 # obj = AnimalShelf()
 # obj.enqueue(animal)

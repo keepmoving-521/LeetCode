@@ -31,6 +31,7 @@ class Solution(object):
             return first[i:] == second[i+1:] or first[i+1:] == second[i+1:]
         return True
 
+
 """
 要点：
     增删改功能特点就是：自不同位起，后续都一样

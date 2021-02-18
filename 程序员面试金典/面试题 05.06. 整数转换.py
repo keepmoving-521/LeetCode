@@ -22,3 +22,4 @@ class Solution(object):
         for i in range(32):
             res += c >> i & 1
         return res
+

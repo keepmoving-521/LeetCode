@@ -45,6 +45,7 @@ class Solution(object):
             ta = ta.next if ta else headB
             tb = tb.next if tb else headA
         return ta
+
 """
 双指针走两遍，走到第二遍两个指针相遇的点即为交点
 如这题应该是比较明显的双指针题，要是能实现一种算法让两个指针分别从A和B点往C点走，

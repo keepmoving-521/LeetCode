@@ -37,6 +37,7 @@ class Solution(object):
                 hanoi(n-1,y,x,z)
         return hanoi(len(A),A,B,C)
 
+
 """
 解题思路
 递归设计的思路：参数，返回值，终止条件，递归条件及其主体。

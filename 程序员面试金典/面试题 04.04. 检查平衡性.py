@@ -66,6 +66,7 @@ class Solution(object):
             else:
                 return max(leftheight, rightheight) + 1
         return height(root) >= 0
+
 """
 方法一：自顶向下的递归
 定义函数height，用于计算二叉树中的任意一个节点 p 的高度：

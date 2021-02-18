@@ -35,6 +35,7 @@ class Solution(object):
         :rtype: bool
         """
         return sorted(s1) == sorted(s2)
+
 """
 思路：位运算
 时间复杂度： O(N)

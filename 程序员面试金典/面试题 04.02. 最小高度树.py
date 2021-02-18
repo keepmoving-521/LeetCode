@@ -32,3 +32,4 @@ class Solution(object):
         root.left = self.sortedArrayToBST(nums[:mid])
         root.right = self.sortedArrayToBST(nums[mid+1:])
         return root
+

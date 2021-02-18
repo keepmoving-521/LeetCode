@@ -27,6 +27,7 @@ class Solution:
     def isFlipedString(self, s1: str, s2: str) -> bool:
         return len(s1) == len(s2) and s1 in s2*2
 
+
 """
 方法一：
 倍增s2，若长度相同的情况下，s1一定为s3的一个子串

@@ -22,6 +22,7 @@ class Solution(object):
         node.val = node.next.val
         node.next = node.next.next
 
+
 '''
 这题的核心思想其实就是把node的下一位的值覆盖给node，然后跳过node的下一位
 因为我们无法访问到head节点，所以除了直接从node开始往下找，其他都是不现实的

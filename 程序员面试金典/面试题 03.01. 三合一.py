@@ -76,6 +76,7 @@ class TripleInOne(object):
 
 
 
+
 # Your TripleInOne object will be instantiated and called as such:
 # obj = TripleInOne(stackSize)
 # obj.push(stackNum,value)

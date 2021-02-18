@@ -20,6 +20,12 @@ class Solution(object):
             return True
         else:
             return False
+
+
+a = Solution()
+# b = a.isUnique('abcdd')
+b = a.isUnique('abcdef')
+print(b)
 """
 解题思路
 将字符串转化为列表

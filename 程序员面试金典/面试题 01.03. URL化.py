@@ -35,3 +35,4 @@ class Solution(object):
             else:
                 URL.append(char)
         return ''.join(URL)
+

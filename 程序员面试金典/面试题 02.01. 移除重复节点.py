@@ -34,6 +34,7 @@ class Solution(object):
             else:
                 pos.next = pos.next.next
         return head
+
 """
 方法一：哈希表
 我们对给定的链表进行一次遍历，并用一个哈希集合（HashSet）来存储所有出现过的节点。

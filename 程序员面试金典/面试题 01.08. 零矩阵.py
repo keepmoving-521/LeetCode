@@ -67,6 +67,7 @@ class Solution(object):
                 matrix[i][k] = 0
             for k in range(row):
                 matrix[k][j] = 0
+
 '''
 方法一：
 解题思路

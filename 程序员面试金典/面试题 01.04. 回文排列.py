@@ -19,6 +19,7 @@ class Solution(object):
         """
         count = [i for i in Counter(s).values() if i%2==1]
         return len(count) < 2
+
 """
 借助counter直接计数
 counter返回的是字典类型，值是出现次数
