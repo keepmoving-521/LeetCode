@@ -21,7 +21,7 @@ class Solution(object):
         """
         if not S:
             return ''
-        a =  S[0]
+        a = S[0]
         b = 0
         c = ''
         for i in S:
@@ -32,8 +32,13 @@ class Solution(object):
                 b = 1
                 a = i
         c += a + str(b)
-        return S if len(S) <= len(c) else  c
+        return S if len(S) <= len(c) else c
 
+
+a = Solution()
+# b = a.compressString("aabcccccaaa")
+b = a.compressString("abbccd")
+print(b)
 """
 方法一：模拟
 思路
