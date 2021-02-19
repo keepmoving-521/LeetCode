@@ -32,6 +32,10 @@ class Solution(object):
         return True
 
 
+a = Solution()
+# b = a.oneEditAway("pale", "pal")
+b = a.oneEditAway("pales", "pal")
+print(b)
 """
 要点：
     增删改功能特点就是：自不同位起，后续都一样
