@@ -28,6 +28,13 @@ class Solution:
         return len(s1) == len(s2) and s1 in s2*2
 
 
+# s1 = "waterbottle"
+# s2 = "erbottlewat"
+s1 = "aa"
+s2 = "aba"
+a = Solution()
+b = a.isFlipedString(s1, s2)
+print(b)
 """
 方法一：
 倍增s2，若长度相同的情况下，s1一定为s3的一个子串
