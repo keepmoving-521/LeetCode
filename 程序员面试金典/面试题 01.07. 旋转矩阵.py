@@ -66,8 +66,25 @@ class Solution(object):
         for i in range(n):
             for j in range(n):
                 matrix_new[j][n - i - 1] = matrix[i][j]
-        matrix[:] = matrix_new
+        # matrix[:] = matrix_new
+        matrix = matrix_new
+        return matrix
 
+
+matrix1 = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+]
+matrix2 = [
+  [5, 1, 9, 11],
+  [2, 4, 8, 10],
+  [13, 3, 6, 7],
+  [15, 14, 12, 16]
+]
+a = Solution()
+b = a.rotate(matrix2)
+print(b)
 """
 方法一：
 复杂度分析
@@ -76,9 +93,9 @@ class Solution(object):
 我们都需要枚举矩阵中一半的元素。
 
 空间复杂度：O(1)。为原地翻转得到的原地旋转。
-复杂度分析
 
 方法二：
+复杂度分析
 时间复杂度：O(N^2)，其中 N 是 matrix 的边长。
 
 空间复杂度：O(N^2)。我们需要使用一个和 matrix 大小相同的辅助数组。
