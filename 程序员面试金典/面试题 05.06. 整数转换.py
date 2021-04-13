@@ -10,6 +10,8 @@
  输入：A = 1，B = 2
  输出：2
 """
+
+
 class Solution(object):
     def convertInteger(self, A, B):
         """
@@ -23,3 +25,13 @@ class Solution(object):
             res += c >> i & 1
         return res
 
+
+obj = Solution()
+a = 29
+b = 15
+c = obj.convertInteger(a, b)
+print(c)
+a2 = 1
+b2 = 2
+c2 = obj.convertInteger(a2, b2)
+print(c2)
