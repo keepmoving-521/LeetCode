@@ -19,24 +19,26 @@
  输入：A = [1, 0], B = [], C = []
  输出：C = [1, 0]
 """
-class Solution(object):
-    def hanota(self, A, B, C):
-        """
-        :type A: List[int]
-        :type B: List[int]
-        :type C: List[int]
-        :rtype: None Do not return anything, modify C in-place instead.
-        """
-        def hanoi(n,x,y,z):
-            if n == 1:
-                z.append(x.pop())
-                return
-            else:
-                hanoi(n-1,x,z,y)
-                hanoi(1,x,y,z)
-                hanoi(n-1,y,x,z)
-        return hanoi(len(A),A,B,C)
+class Hanoi(object):
+    def hanoi(self, n, a, b, c):
+        if n == 1:
+            c.append(a.pop())
+            return
+        else:
+            self.hanoi(n - 1, a, c, b)  # 将A上面n-1个通过C移到B
+            self.hanoi(1, a, b, c)  # 将A最后一个移到C
+            self.hanoi(n - 1, b, a, c)  # 将B上面n-1个通过空的A移到C
 
+
+if __name__ == '__main__':
+    A = [2, 1, 0, 8]
+    B = []
+    C = []
+    obj = Hanoi()
+    obj.hanoi(len(A), A, B, C)
+    print(A)
+    print(B)
+    print(C)
 
 """
 解题思路
