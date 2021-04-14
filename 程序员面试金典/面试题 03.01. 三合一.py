@@ -22,64 +22,43 @@ stackNum表示栈下标，value表示压入的值。
  输出：
 [null, null, null, null, 2, 1, -1, -1]
 """
-class TripleInOne(object):
-
-    def __init__(self, stackSize):
-        """
-        :type stackSize: int
-        """
-        self.TripleStack = [[] for _ in range(3)]
-        self.stackSize = stackSize
 
 
-    def push(self, stackNum, value):
-        """
-        :type stackNum: int
-        :type value: int
-        :rtype: None
-        """
-        if len(self.TripleStack[stackNum]) < self.stackSize:
-            self.TripleStack[stackNum].append(value)
+class TripeInOne(object):
+    def __init__(self, stack_size):
+        self.stack_size = stack_size
+        self.tripe_stack = [[] for _ in range(3)]
 
-
-    def pop(self, stackNum):
-        """
-        :type stackNum: int
-        :rtype: int
-        """
-        if self.TripleStack[stackNum] != []:
-            pop_value = self.TripleStack[stackNum][-1]
-            self.TripleStack[stackNum] = self.TripleStack[stackNum][:-1]
-            return pop_value
+    def push(self, stack_num, value):
+        if len(self.tripe_stack[stack_num]) < self.stack_size:
+            self.tripe_stack[stack_num].append(value)
         else:
             return -1
 
-
-    def peek(self, stackNum):
-        """
-        :type stackNum: int
-        :rtype: int
-        """
-        if self.TripleStack[stackNum] != []:
-            peek_value = self.TripleStack[stackNum][-1]
-            return peek_value
+    def pop(self, stack_num):
+        if len(self.tripe_stack[stack_num]) != 0:
+            return self.tripe_stack[stack_num].pop()
         else:
             return -1
 
+    def peek(self, stack_num):
+        if len(self.tripe_stack[stack_num]) != 0:
+            return self.tripe_stack[stack_num][-1]
+        else:
+            return -1
 
-    def isEmpty(self, stackNum):
-        """
-        :type stackNum: int
-        :rtype: bool
-        """
-        return self.TripleStack[stackNum] == []
+    def is_empty(self, stack_num):
+        return self.tripe_stack[stack_num] == []
 
 
-
-
-# Your TripleInOne object will be instantiated and called as such:
-# obj = TripleInOne(stackSize)
-# obj.push(stackNum,value)
-# param_2 = obj.pop(stackNum)
-# param_3 = obj.peek(stackNum)
-# param_4 = obj.isEmpty(stackNum)
+if __name__ == '__main__':
+    obj = TripeInOne(10)
+    print(obj.is_empty(0))
+    obj.push(0, 3)
+    obj.push(0, 2)
+    obj.push(0, 1)
+    print(obj.is_empty(0))
+    print(obj.peek(1))
+    print(obj.peek(0))
+    print(obj.pop(0))
+    print(obj.peek(0))
