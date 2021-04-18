@@ -28,11 +28,14 @@ skipB = 3
 由于这两个链表不相交，所以 intersectVal 必须为 0，而 skipA 和 skipB 可以是任意值。
 解释：这两个链表不相交，因此返回 null。
 """
+
+
 # Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
 
 class Solution(object):
     def getIntersectionNode(self, headA, headB):
@@ -45,6 +48,7 @@ class Solution(object):
             ta = ta.next if ta else headB
             tb = tb.next if tb else headA
         return ta
+
 
 """
 双指针走两遍，走到第二遍两个指针相遇的点即为交点
