@@ -5,6 +5,8 @@
 输入： 1->2->3->4->5 和 k = 2
 输出： 4
 """
+
+
 #  方法一：
 # Definition for singly-linked list.
 # class ListNode(object):
@@ -24,8 +26,9 @@ class Solution(object):
             p = p.next
         while p:
             head = head.next
-            p=p.next
+            p = p.next
         return head.val
+
 
 #  方法二：
 # Definition for singly-linked list.
