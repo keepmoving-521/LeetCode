@@ -21,6 +21,8 @@
 4   4
 返回 false 。
 """
+
+
 #  方法一（自顶向下的递归）
 # Definition for a binary tree node.
 # class TreeNode(object):
@@ -35,13 +37,18 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
+
         def height(root):
             if not root:
                 return 0
             return max(height(root.left), height(root.right)) + 1
+
         if not root:
             return True
-        return abs(height(root.left)-height(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right)
+        return abs(height(root.left) - height(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(
+            root.right)
+
+
 #  方法二：
 # Definition for a binary tree node.
 # class TreeNode(object):
@@ -56,6 +63,7 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
+
         def height(root):
             if not root:
                 return 0
@@ -65,7 +73,9 @@ class Solution(object):
                 return -1
             else:
                 return max(leftheight, rightheight) + 1
+
         return height(root) >= 0
+
 
 """
 方法一：自顶向下的递归
